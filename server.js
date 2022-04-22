@@ -28,15 +28,15 @@ function listening() {
 }
 
 //GET function
-app.get('/all', getData);
-function getData(req, res){
+app.get("/all", getData);
+function getData(req, res) {
   res.send(projectData);
-  projectData = [];
+  projectData = {};
 }
 
 //POST Route
-app.post('/add', postData);
-function postData(req, res){
+app.post("/add", postData);
+function postData(req, res) {
   const newData = req.body;
-  projectData=newData;
+  projectData = newData;
 }
