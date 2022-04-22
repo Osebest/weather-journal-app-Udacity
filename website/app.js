@@ -5,7 +5,7 @@ setTimeout(() =>{
 /* Global Variables */
 const baseUrl = "http://api.openweathermap.org/data/2.5/forecast?zip=";
 const zip = document.getElementById('zip');
-const apiKey = '&appid=e4eabc8d7631ab8086c4f4181078f805';
+const apiKey = '&appid=e4eabc8d7631ab8086c4f4181078f805&units=imperial';
 const feelings = document.getElementById('feelings');
 const feeling = document.getElementById('feeling');
 const date = document.getElementById('date');
@@ -96,9 +96,9 @@ const updateUI = async () => {
   const update = await fetch('/all');
   try {
     const updates = await update.json();
-    date.innerHTML = `Date: ${updates[0].date}`;
-    temp.innerHTML = `Temperature: ${updates[0].temp}`;
-    feeling.innerHTML = `I feel: ${updates[0].feeling}`;
+    date.innerHTML = `Date: ${updates.date}`;
+    temp.innerHTML = `Temperature: ${updates.temp}`;
+    feeling.innerHTML = `I feel: ${updates.feeling}`;
   }catch(error){
     console.log("error", error);
   }
